@@ -1,0 +1,25 @@
+{
+  "name": "preamble-cli",
+  "description": "A CLI tool that prepends text and/or file data to an output file.",
+  "bin": {
+    "preamble": "main.js"
+  },
+  "author": "Leandro Silva (http://grafluxe.com)",
+  "homepage": "https://github.com/Grafluxe/preamble-cli",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "Grafluxe/preamble-cli.git",
+  "keywords": [
+    "prepend",
+    "prepend file",
+    "prepend text",
+    "prepend license",
+    "text preamble",
+    "file data preamble",
+    "CLI preamble",
+    "premble build script"
+  ],
+  "dependencies": {
+    "argv": "0.0.2"
+  }
+}
