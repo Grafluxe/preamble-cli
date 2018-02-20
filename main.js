@@ -91,19 +91,13 @@ function prependFile() {
 }
 
 function onReadError(err, fileType) {
-  switch (err.code) {
-    case "EISDIR":
-      console.error("\x1b[31m%s\x1b[0m\n", `Expecting a file and not a directory:\n${err.path}`);
-      process.exit(1);
-      break;
-    case "EISDIR":
-      console.error("\x1b[31m%s\x1b[0m\n", `No such file exists:\n${err.path}`);
-      process.exit(1);
-      break;
-    default:
-      console.error("\x1b[31m%s\x1b[0m\n", `There was an error reading your ${fileType} file:\n${err.path}`);
-      process.exit(1);
+  if (err.code === "EISDIR") {
+    console.error("\x1b[31m%s\x1b[0m\n", `Expecting a file and not a directory:\n${err.path}`);
+  } else {
+    console.error("\x1b[31m%s\x1b[0m\n", `There was an error reading your ${fileType} file:\n${err.path}`);
   }
+
+  process.exit(1);
 }
 
 function supportSpecialChars(str) {
