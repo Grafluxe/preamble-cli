@@ -13,8 +13,6 @@
  *   preamble -p "/*" -e ./LICENSE.md -m "&#42;/" -o ./dist/script.min.js
  */
 
-// jshint node: true, esversion: 6
-
 let argv = require("argv"),
     fs = require("fs"),
     opts,
