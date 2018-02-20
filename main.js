@@ -81,25 +81,30 @@ function prependFile() {
 
       fs.writeFile(opts.output, supportSpecialChars(out) + data, err => {
         if (err) {
-          console.error(`There was an error writing your file:\n${err.path}`);
+          console.error("\x1b[31m%s\x1b[0m\n", `There was an error writing your file:\n${err.path}`);
+          process.exit(1);
         }
       });
     });
   } else {
-    console.error("Your output file does not exist.\nUse 'preamble -h' for more details.");
+    console.error("\x1b[31m%s\x1b[0m\n", "Your output file does not exist.\nUse 'preamble -h' for more details.");
+    process.exit(1);
   }
 }
 
 function onReadError(err, fileType) {
   switch (err.code) {
     case "EISDIR":
-      console.error(`Expecting a file and not a directory:\n${err.path}`);
+      console.error("\x1b[31m%s\x1b[0m\n", `Expecting a file and not a directory:\n${err.path}`);
+      process.exit(1);
       break;
     case "EISDIR":
-      console.error(`No such file exists:\n${err.path}`);
+      console.error("\x1b[31m%s\x1b[0m\n", `No such file exists:\n${err.path}`);
+      process.exit(1);
       break;
     default:
-      console.error(`There was an error reading your ${fileType} file:\n${err.path}`);
+      console.error("\x1b[31m%s\x1b[0m\n", `There was an error reading your ${fileType} file:\n${err.path}`);
+      process.exit(1);
   }
 }
 
@@ -118,5 +123,6 @@ function supportSpecialChars(str) {
 if (opts.output) {
   createPreamble();
 } else {
-  console.error("The --output (-o) option is required.\nUse 'preamble -h' for more details.");
+  console.error("\x1b[31m%s\x1b[0m\n", "The --output (-o) option is required.\nUse 'preamble -h' for more details.");
+  process.exit(1);
 }
