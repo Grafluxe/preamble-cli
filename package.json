@@ -6,7 +6,7 @@
   },
   "author": "Leandro Silva (http://grafluxe.com)",
   "homepage": "https://github.com/Grafluxe/preamble-cli",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "repository": "Grafluxe/preamble-cli.git",
   "keywords": [
@@ -17,7 +17,8 @@
     "text preamble",
     "file data preamble",
     "CLI preamble",
-    "premble build script"
+    "premble build script",
+    "cli"
   ],
   "dependencies": {
     "argv": "0.0.2"

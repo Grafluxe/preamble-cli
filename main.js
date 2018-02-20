@@ -2,7 +2,7 @@
 
 /**
  * @author Leandro Silva
- * @copyright 2017 Leandro Silva (http://grafluxe.com)
+ * @copyright 2017-2018 Leandro Silva (http://grafluxe.com)
  * @license MIT
  *
  * @classdesc A CLI tool that prepends text and/or file data to an output file.
